@@ -1,0 +1,170 @@
+[
+    {
+        "pk": 1,
+        "model": "questions.category",
+        "fields": {
+            "name": "General Knowledge"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Books"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Film"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Music"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Musicals & Theatres"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Television"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Video Games"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Board Games"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "questions.category",
+        "fields": {
+            "name": "Science & Nature"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "questions.category",
+        "fields": {
+            "name": "Science: Computers"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "questions.category",
+        "fields": {
+            "name": "Science: Mathematics"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "questions.category",
+        "fields": {
+            "name": "Mythology"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "questions.category",
+        "fields": {
+            "name": "Sports"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "questions.category",
+        "fields": {
+            "name": "Geography"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "questions.category",
+        "fields": {
+            "name": "History"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "questions.category",
+        "fields": {
+            "name": "Politics"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "questions.category",
+        "fields": {
+            "name": "Art"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "questions.category",
+        "fields": {
+            "name": "Celebrities"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "questions.category",
+        "fields": {
+            "name": "Animals"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "questions.category",
+        "fields": {
+            "name": "Vehicles"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Comics"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "questions.category",
+        "fields": {
+            "name": "Science: Gadgets"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Japanese Anime & Manga"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "questions.category",
+        "fields": {
+            "name": "Entertainment: Cartoon & Animations"
+        }
+    }
+]
