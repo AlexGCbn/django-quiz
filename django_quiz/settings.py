@@ -59,6 +59,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_quiz.urls'
 
+CSRF_TRUSTED_ORIGINS = {
+    'https://8000-alexgcbn-djangoquiz-1n74yjaifms.ws-eu75.gitpod.io'
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
