@@ -31,10 +31,20 @@ class RandomQuestionsView(View):
         return render(request, template, context)
 
     def post(self, request):
+        template = 'question_result.html'
         
-        value = request.POST['answer']
+        answer = request.POST['answer']
         q_id = request.POST['question_id']
-        print(value)
-        print(q_id)
+        result = False
 
-        return redirect('home')
+        question = Question.objects.get(id=q_id)
+        if question.correct_answer == answer:
+            result = True
+        
+        context = {
+            'question': question,
+            'answer': answer,
+            'result': result,
+        }
+
+        return render(request, template, context)

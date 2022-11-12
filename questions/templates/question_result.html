@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+    {% if result == True %}
+    <h3><span class="text-success">Correct!</span> You answered <span class="text-success">"{{ answer }}"</span> to the question "{{ question }}"</h3>
+    {% else %}
+    <h3><span class="text-danger">Incorrect!</span> You answered <span class="text-danger">"{{ answer }}"</span> to the question "{{ question }}"</h3>
+    <h3>Correct answer was: {{ question.correct_answer }}</h3>
+    {% endif %}
+</div>
+
+{% endblock %}
