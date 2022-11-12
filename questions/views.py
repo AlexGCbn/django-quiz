@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .models import Category, Question
+from .forms import QuestionForm
 import random
 
 
@@ -17,11 +18,23 @@ class RandomQuestionsView(View):
     def get(self, request):
         template = 'random_question.html'
 
+        form = QuestionForm()
         question_count = Question.objects.all().count()
         random_question = Question.objects.filter(pk=random.randint(1, question_count))
 
+        print(random_question[0].questions)
+
         context = {
-            'question': random_question
+            'question': random_question[0]
         }
 
         return render(request, template, context)
+
+    def post(self, request):
+        
+        value = request.POST['answer']
+        q_id = request.POST['question_id']
+        print(value)
+        print(q_id)
+
+        return redirect('home')
