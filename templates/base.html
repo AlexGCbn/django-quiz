@@ -25,8 +25,15 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'random_question' %}">Random questions</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Random questions
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'random_question' 'easy' %}">Easy</a></li>
+                <li><a class="dropdown-item" href="{% url 'random_question' 'medium' %}">Medium</a></li>
+                <li><a class="dropdown-item" href="{% url 'random_question' 'hard' %}">Hard</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Categories</a>

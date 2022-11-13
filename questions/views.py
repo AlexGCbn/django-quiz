@@ -15,22 +15,22 @@ class HomeView(View):
 class RandomQuestionsView(View):
 
     # GET request for random questions game
-    def get(self, request):
+    def get(self, request, difficulty):
         template = 'random_question.html'
 
         form = QuestionForm()
-        question_count = Question.objects.all().count()
-        random_question = Question.objects.filter(pk=random.randint(1, question_count))
-
-        print(random_question[0].questions)
+        question_count = Question.objects.filter(difficulty=difficulty).count()
+        diff_questions = Question.objects.filter(difficulty=difficulty)
+        rand_question = diff_questions[random.randint(1, question_count)]
+        print(rand_question.difficulty)
 
         context = {
-            'question': random_question[0]
+            'question': rand_question,
         }
 
         return render(request, template, context)
 
-    def post(self, request):
+    def post(self, request, difficulty):
         template = 'question_result.html'
         
         answer = request.POST['answer']
@@ -45,6 +45,7 @@ class RandomQuestionsView(View):
             'question': question,
             'answer': answer,
             'result': result,
+            'difficulty': difficulty,
         }
 
         return render(request, template, context)

@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
-    path('random/', views.RandomQuestionsView.as_view(), name='random_question'),
+    path('random/<str:difficulty>', views.RandomQuestionsView.as_view(), name='random_question'),
 ]
