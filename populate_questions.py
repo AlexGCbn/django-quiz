@@ -47,7 +47,8 @@ def populate_categories_and_questions():
                     'content': question['question'],
                     'difficulty': question['difficulty'],
                     'questions': all_questions,
-                    'correct_answer': question['correct_answer']
+                    'correct_answer': question['correct_answer'],
+                    'question_type': question['type']
                 }
             })
             index_que += 1
