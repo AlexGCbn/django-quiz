@@ -16,7 +16,7 @@ class Question(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     content = models.CharField(max_length=1024)
     difficulty = models.CharField(max_length=254)
-    questions = ArrayField(models.CharField(max_length=254))
+    answers = ArrayField(models.CharField(max_length=254))
     correct_answer = models.CharField(max_length=254)
 
     TYPE_CHOICES = [

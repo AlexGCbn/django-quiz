@@ -12,7 +12,7 @@
         {% csrf_token %}
         <div class="mb-3">
             <!-- Iterate over answers -->
-            {% for x in question.questions %}
+            {% for x in question.answers %}
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="answer" value="{{ x }}" required />
                 <label class="form-check-label">

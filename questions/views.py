@@ -24,6 +24,7 @@ class RandomQuestionsView(View):
     def get(self, request):
         """GET request for RandomQuestionsView.
         Renders a random question based on chosen difficulty."""
+
         template = 'random_question.html'
 
         no_question = False
@@ -39,13 +40,12 @@ class RandomQuestionsView(View):
         difficulty_filter = {'difficulty': difficulty} if difficulty else {}
         category_filter = {'category': category} if category else {}
         question_type_filter = {'question_type': question_type} if question_type else {}
-        print(difficulty_filter)
-        print(category_filter)
-        print(question_type_filter)
 
         # Get question count and choose a random question
         question_count = Question.objects.filter(**difficulty_filter).filter(**category_filter).filter(**question_type_filter).count()
         diff_questions = Question.objects.filter(**difficulty_filter).filter(**category_filter).filter(**question_type_filter)
+
+        # Try to get a question with chosen options. If no question is available, return True for no_question
         try:
             rand_question = diff_questions[random.randint(0, (question_count - 1))]
         except:
@@ -66,6 +66,7 @@ class RandomQuestionsView(View):
         """POST request for RandomQuestionsView.
         Handles the form POST method to get question and check if answer is correct.
         Renders a result page."""
+
         template = 'question_result.html'
         
         answer = request.POST['answer']
