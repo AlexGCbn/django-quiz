@@ -6,4 +6,5 @@ urlpatterns = [
     path('random/<str:difficulty>', views.RandomQuestionsView.as_view(), name='random_question'),
     path('random/<str:difficulty>/<int:category>', views.RandomQuestionsView.as_view(), name='random_question'),
     path('categories/', views.CategoriesView.as_view(), name='categories'),
+    path('questionform/', views.QuestionFormView.as_view(), name='question_form'),
 ]

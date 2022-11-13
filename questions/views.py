@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Category, Question
+from .forms import QuestionForm
 import random
 
 
@@ -16,7 +17,7 @@ class HomeView(View):
 class RandomQuestionsView(View):
 
     # GET request for random questions game
-    def get(self, request, difficulty, category=None):
+    def get(self, request, difficulty, category=None, question_type=None):
         """GET request for RandomQuestionsView.
         Renders a random question based on chosen difficulty."""
         template = 'random_question.html'
@@ -41,7 +42,7 @@ class RandomQuestionsView(View):
 
     # POST request for random questions
     # handles
-    def post(self, request, difficulty, category=None):
+    def post(self, request, difficulty, category=None, question_type=None):
         """POST request for RandomQuestionsView.
         Handles the form POST method to get question and check if answer is correct.
         Renders a result page."""
@@ -80,6 +81,18 @@ class CategoriesView(View):
 
         context = {
             'categories': categories,
+        }
+
+        return render(request, template, context)
+
+
+class QuestionFormView(View):
+
+    def get(self, request):
+        template = 'question_form.html'
+        form = QuestionForm()
+        context = {
+            'form': form,
         }
 
         return render(request, template, context)
