@@ -4,4 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('random/<str:difficulty>', views.RandomQuestionsView.as_view(), name='random_question'),
+    path('random/<str:difficulty>/<int:category>', views.RandomQuestionsView.as_view(), name='random_question'),
+    path('categories/', views.CategoriesView.as_view(), name='categories'),
 ]

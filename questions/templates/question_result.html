@@ -2,12 +2,16 @@
 
 <div class="container">
     {% if result == True %}
-    <h3><span class="text-success">Correct!</span> You answered <span class="text-success">"{{ answer }}"</span> to the question "{{ question }}"</h3>
+    <h3><span class="text-success">Correct!</span> You answered <span class="text-success">"{{ answer | safe }}"</span> to the question "{{ question | safe }}"</h3>
     {% else %}
-    <h3><span class="text-danger">Incorrect!</span> You answered <span class="text-danger">"{{ answer }}"</span> to the question "{{ question }}"</h3>
-    <h3>Correct answer was: <span class="text-success">{{ question.correct_answer }}</span></h3>
+    <h3><span class="text-danger">Incorrect!</span> You answered <span class="text-danger">"{{ answer | safe }}"</span> to the question "{{ question | safe }}"</h3>
+    <h3>Correct answer was: <span class="text-success">{{ question.correct_answer | safe }}</span></h3>
     {% endif %}
+    {% if category_id %}
+    <a href="{% url 'random_question' difficulty category_id %}" class="btn btn-success mt-4">Another one!</a>
+    {% else %}
     <a href="{% url 'random_question' difficulty %}" class="btn btn-success mt-4">Another one!</a>
+    {% endif %}
 </div>
 
 {% endblock %}
