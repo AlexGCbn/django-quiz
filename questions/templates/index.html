@@ -2,8 +2,15 @@
 
 <div class="container">
 
+  <div>
+    <h4>Instructions:</h4>
+    <p>You can use the form below to start the game. You can either choose the options, or leave them blank to play
+      completely randomized questions.</p>
+    <p>Return to the homepage anytime by clicking the logo above.</p>
+  </div>
+
   <h4 class="mt-4">Choose options to play:</h4>
-  
+
   <form action="{% url 'random_question' %}" method="GET" class="mt-4">
     {% csrf_token %}
     {{ form.as_p }}
