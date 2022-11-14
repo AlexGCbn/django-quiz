@@ -34,8 +34,13 @@ def populate_categories_and_questions():
             for inc_question in question['incorrect_answers']:
                 all_answers.append(inc_question)
             all_answers.append(question['correct_answer'])
-            # Shuffle questions
+            # Shuffle answers
             random.shuffle(all_answers)
+            # Convert answers from array to string
+            all_answers_str = ''
+            for answer in all_answers:
+                all_answers_str += answer
+                all_answers_str += '---'
             # Format appropriately for Question model
             questions.append({
                 'pk': index_que,
@@ -44,7 +49,7 @@ def populate_categories_and_questions():
                     'category': index_cat,
                     'content': question['question'],
                     'difficulty': question['difficulty'],
-                    'answers': all_answers,
+                    'answers': all_answers_str,
                     'correct_answer': question['correct_answer'],
                     'question_type': question['type']
                 }

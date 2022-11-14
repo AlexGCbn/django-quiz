@@ -48,6 +48,9 @@ class RandomQuestionsView(View):
         # Try to get a question with chosen options. If no question is available, return True for no_question
         try:
             rand_question = diff_questions[random.randint(0, (question_count - 1))]
+            answers = rand_question.answers.split('---')
+            answers.pop()
+            rand_question.answers = answers
         except:
             no_question = True
         context = {
