@@ -14,7 +14,7 @@ class TestModels(TestCase):
         )
 
         test_question = Question.objects.create(
-            category=1,
+            category=test_category,
             content="Test question",
             difficulty="easy",
             answers=["answer1", "answer2", "answer3"],
@@ -22,9 +22,18 @@ class TestModels(TestCase):
             question_type="multiple"
         )
 
-    def test_category_creation(self):
+    def test_category_str(self):
         """
         Test if category was created successfully.
         """
         category = Category.objects.get(id=1)
-        self.assertEqual(category.name, "Test category")
+        category_str = str(category)
+        self.assertEqual(category_str, "Test category")
+
+    def test_question_str(self):
+        """
+        Test if category was created successfully.
+        """
+        question = Question.objects.get(id=1)
+        question_str = str(question)
+        self.assertEqual(question_str, "Test question")

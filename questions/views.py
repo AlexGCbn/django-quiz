@@ -8,6 +8,10 @@ import random
 class QuestionFormView(View):
 
     def get(self, request):
+        """
+        GET request for homepage.
+        Renders the index page with a form to display game options.
+        """
         template = 'index.html'
         form = QuestionForm()
         context = {
@@ -20,15 +24,20 @@ class QuestionFormView(View):
 
 class RandomQuestionsView(View):
 
-    # GET request for random questions game
     def get(self, request):
-        """GET request for RandomQuestionsView.
-        Renders a random question based on chosen difficulty."""
+        """
+        GET request for RandomQuestionsView.
+        Renders a random question based on chosen difficulty.
+        """
 
         template = 'random_question.html'
 
         no_question = False
         rand_question = []
+
+        difficulty = {}
+        category = {}
+        question_type = {}
         # Handle questions with form
         form = QuestionForm(request.GET)
         if form.is_valid():
@@ -63,12 +72,12 @@ class RandomQuestionsView(View):
 
         return render(request, template, context)
 
-    # POST request for random questions
-    # handles
     def post(self, request):
-        """POST request for RandomQuestionsView.
+        """
+        POST request for RandomQuestionsView.
         Handles the form POST method to get question and check if answer is correct.
-        Renders a result page."""
+        Renders a result page.
+        """
 
         template = 'question_result.html'
         

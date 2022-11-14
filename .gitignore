@@ -10,3 +10,8 @@ cloudinary_python.txt
 *.sqlite3
 *.pyc
 venv/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
