@@ -23,7 +23,7 @@
         </div>
         <!-- Hidden input to pass question ID -->
         <input type="hidden" value="{{ question.id }}" name="question_id">
-        <!-- Check if category_id was provided to pass in POST -->
+        <!-- Check if other attributes were provided to pass in POST -->
         {% if difficulty %}
         <input type="hidden" value="{{ difficulty }}" name="difficulty">
         {% endif %}
