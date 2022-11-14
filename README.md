@@ -20,12 +20,14 @@ The game can be played either completely randomly, or by choosing options to fil
 The homepage provides instructions on how to use the app.<br>
 - You can ignore the form and press the green "Start" button to get a randomized question from the database.<br>
 <br>
+
 ![Quiz with no options chosen](/media/quiz_no_options.png)<br>
 <br>
 - You can use the form to choose a Difficulty, Category and/or Question Type option.<br>
 <br>
 - If you do, when they press "Start" they will get a random question based on those parameters.<br>
 <br>
+
 ![Quiz with no options chosen](/media/quiz_with_options.png)<br>
 <br>
 - You can always press the "Django Quiz" link on top to get to the home page.
